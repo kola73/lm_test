@@ -1,4 +1,4 @@
-package com.kola.java.lesson11;
+package main.java.com.kola.java.lesson11;
 
 /**
  * 循环结构的四大要素：

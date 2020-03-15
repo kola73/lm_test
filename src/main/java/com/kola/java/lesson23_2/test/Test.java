@@ -1,4 +1,4 @@
-package com.kola.java.lesson23_2.test;
+package main.java.com.kola.java.lesson23_2.test;
 
 import com.kola.java.lesson23_2.AccessModifier;
 

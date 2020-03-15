@@ -1,4 +1,4 @@
-package com.kola.java.lesson13;
+package main.java.com.kola.java.lesson13;
 
 /**
  * 作用域：

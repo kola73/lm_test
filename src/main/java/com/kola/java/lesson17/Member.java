@@ -1,4 +1,4 @@
-package com.kola.java.lesson17;
+package main.java.com.kola.java.lesson17;
 
 /**
  * 封装

@@ -1,4 +1,4 @@
-package com.kola.java.lesson14;
+package main.java.com.kola.java.lesson14;
 
 // 计算数组的和
 

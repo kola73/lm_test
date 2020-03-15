@@ -1,4 +1,4 @@
-package com.kola.java.lesson12;
+package main.java.com.kola.java.lesson12;
 
 public class Switch {
     public static void main(String[] args) {

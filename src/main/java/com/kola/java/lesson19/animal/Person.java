@@ -1,4 +1,4 @@
-package com.kola.java.lesson19.animal;
+package main.java.com.kola.java.lesson19.animal;
 
 public class Person extends Animal {
     @Override

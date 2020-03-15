@@ -1,4 +1,4 @@
-package com.kola.java.lesson16;
+package main.java.com.kola.java.lesson16;
 
 public class Test {
     public static void main(String[] args) {

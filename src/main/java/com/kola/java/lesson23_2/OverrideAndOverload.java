@@ -1,4 +1,4 @@
-package com.kola.java.lesson23_2;
+package main.java.com.kola.java.lesson23_2;
 
 /*
 重写和重载：

@@ -1,4 +1,4 @@
-package com.kola.java.lesson16;
+package main.java.com.kola.java.lesson16;
 
 /**
  * 包装类：以类的形式来管理基本数据类型

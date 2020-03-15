@@ -1,4 +1,4 @@
-package com.kola.java.lesson21;
+package main.java.com.kola.java.lesson21;
 
 import com.kola.java.lesson21.future.Investor;
 import com.kola.java.lesson21.future.Member;

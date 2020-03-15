@@ -1,4 +1,4 @@
-package com.kola.java.lesson19;
+package main.java.com.kola.java.lesson19;
 
 /*
 抽象类

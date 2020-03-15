@@ -1,4 +1,4 @@
-package com.kola.java.lesson12;
+package main.java.com.kola.java.lesson12;
 
 /*
 三目运算符

@@ -1,4 +1,4 @@
-package com.kola.java.lesson23_1;
+package main.java.com.kola.java.lesson23_1;
 
 import java.util.Collection;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.kola.java.lesson18;
+package main.java.com.kola.java.lesson18;
 
 
 public class Investor extends Member {

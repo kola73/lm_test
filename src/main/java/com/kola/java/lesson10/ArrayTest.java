@@ -1,4 +1,4 @@
-package com.kola.java.lesson10;
+package main.java.com.kola.java.lesson10;
 
 /**
  * 数组
