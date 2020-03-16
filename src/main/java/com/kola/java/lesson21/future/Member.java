@@ -1,7 +1,7 @@
 package main.java.com.kola.java.lesson21.future;
 
-import com.kola.java.lesson19.InnerUser;
-import com.kola.java.lesson19.Login;
+import main.java.com.kola.java.lesson19.InnerUser;
+import main.java.com.kola.java.lesson19.Login;
 
 /**
  * 封装

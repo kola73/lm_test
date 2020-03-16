@@ -1,7 +1,7 @@
 package main.java.com.kola.java.lesson21;
 
-import com.kola.java.lesson21.future.Investor;
-import com.kola.java.lesson21.future.Member;
+import main.java.com.kola.java.lesson21.future.Investor;
+import main.java.com.kola.java.lesson21.future.Member;
 
 import java.util.HashSet;
 import java.util.Iterator;
