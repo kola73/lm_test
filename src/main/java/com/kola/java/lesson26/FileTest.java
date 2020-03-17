@@ -29,5 +29,6 @@ public class FileTest {
         // delete只能删除文件和空的目录
         boolean isDel = file4.delete();
         System.out.println(isDel);
+
     }
 }
