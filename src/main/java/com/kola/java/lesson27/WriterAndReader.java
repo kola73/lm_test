@@ -15,7 +15,7 @@ public class WriterAndReader {
             bufferedWriter = new BufferedWriter(new FileWriter(targetFile));
             while (true) {
                 String line = bufferedReader.readLine(); // 读取文件
-                if (line == null) {
+                if (line == null) {  // 如果为空，表示读取到最后一行，所以我们直接退出循环
                     break;
                 } else {
                     bufferedWriter.write(line);  //写入文件

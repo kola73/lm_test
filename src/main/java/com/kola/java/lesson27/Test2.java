@@ -5,28 +5,24 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-// 字符流：读取图片之类的
-public class OSTest {
+public class Test2 {
     public static void main(String[] args) {
         FileInputStream is = null;
         FileOutputStream os = null;
         try {
             is = new FileInputStream("C:\\Users\\YH\\Pictures\\Screenshots\\屏幕截图(1).png");
-            os = new FileOutputStream("C:\\Users\\YH\\Pictures\\Screenshots\\2.png");
-            // 创建一个buffer缓冲器（容器）
-            // 如果没有读取到内容，将返回-1，否则返回到读取的数据的长度
-            byte[] data = new byte[1024];
+            os = new FileOutputStream("C:\\Users\\YH\\Pictures\\Screenshots\\4.png");
+            byte[] datas = new byte[1024];
             while (true) {
-                int size = is.read(data);
-                if (size == -1) {
+                int length = is.read(datas);
+                if (length == -1) {
                     break;
                 } else {
-                    os.write(data, 0, size);
+                    os.write(datas, 0, length);
                 }
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (os != null) {
@@ -42,6 +38,7 @@ public class OSTest {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
             }
         }
 
