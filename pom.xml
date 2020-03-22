@@ -45,5 +45,11 @@
             <version>5.1.38</version>
         </dependency>
 
+        <dependency>
+            <version>6.9.10</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+        </dependency>
+        
     </dependencies>
 </project>
