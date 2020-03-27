@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--套件测试-->
+<suite name="test">
+    <test name="register">
+        <classes>
+            <class name="com.kola.java.lesson34.RegisterFailureTest"/>
+            <class name="com.kola.java.lesson34.RegisterSuccessTest"/>
+        </classes>
+    </test>
+    <test name="login">
+        <classes>
+            <class name="com.kola.java.lesson34.LoginFailureTest"/>
+            <class name="com.kola.java.lesson34.LoginSuccessTest"/>
+        </classes>
+    </test>
+
+</suite>

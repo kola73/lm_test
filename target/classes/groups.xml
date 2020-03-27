@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--套件测试-->
+<!--包含/不包含-->
+<suite name="test">
+    <test name="register">
+        <groups>
+            <run>
+<!--                <include name="g1"></include> -->
+                <exclude name="g1"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.kola.java.lesson35.GroupTest"></class>
+        </classes>
+    </test>
+
+</suite>
