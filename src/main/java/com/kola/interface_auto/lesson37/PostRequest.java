@@ -21,7 +21,7 @@ import java.util.List;
 4，发包
 5，查看响应结果
  */
-public class PostTest {
+public class PostRequest {
 
     @Test
     public void post() throws Exception {
@@ -29,6 +29,8 @@ public class PostTest {
         String url = "http://hc-t1.yonghuivip.com/signin";
         // 指定请求方法
         HttpPost post = new HttpPost(url);
+        // 如果有需要添加请求头，可以使用如下方法添加
+        post.addHeader("connection","Connection");
         // 创建一个容器，保存每个参数
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("username", "admin"));
