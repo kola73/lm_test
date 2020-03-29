@@ -1,5 +1,6 @@
-package com.kola.interface_auto.lesson38;
+package com.kola.interface_auto.lesson40;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -19,15 +20,15 @@ public class TestCase {
         Map<String, String> params = new HashMap<>();
         params.put("pagesize", "10");
         params.put("pageindex", "1");
-        HttpUtils.get(url, params);
+        HttpUtils_v1.get(url, params);
     }
 
-    @Test
-    public void postTest() {
+    @Test(dataProvider = "datas")
+    public void postTest(String usermame,String password) {
         String url = "http://hc-t1.yonghuivip.com/signin";
         Map<String, String> param = new HashMap<>();
-        param.put("username", "admin");
-        param.put("password", "123456a");
-        HttpUtils.post(url, param);
+        param.put("username", usermame);
+        param.put("password", password);
+        HttpUtils_v1.post(url, param);
     }
 }

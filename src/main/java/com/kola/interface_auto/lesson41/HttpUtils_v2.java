@@ -1,4 +1,4 @@
-package com.kola.interface_auto.lesson38;
+package com.kola.interface_auto.lesson41;
 
 import org.apache.http.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -12,20 +12,28 @@ import org.apache.http.util.EntityUtils;
 import org.testng.Assert;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-public class HttpUtils {
+public class HttpUtils_v2 {
     public static void get(String url, Map<String, String> paramsMap) {
         try {
-            List<NameValuePair> paramsList = new ArrayList<>();
-            Set<String> keys = paramsMap.keySet();
-            for (String key : keys) {
-                String value = paramsMap.get(key);
-                paramsList.add(new BasicNameValuePair(key, value));
+            // 创建list存放名值对参数（为了排除耦合性，用了hashmap进行存储）
+            List<NameValuePair> paramsList = null;
+            // 加一个判断，防止报空指针（有参数设置参数，没有参数就不要赋值，设置为空）
+            if (paramsMap != null) {
+                paramsList = new ArrayList<>();
+                Set<String> keys = paramsMap.keySet();
+                for (String key : keys) {
+                    String value = paramsMap.get(key);
+                    paramsList.add(new BasicNameValuePair(key, value));
+                }
+                // 创建get请求
+                String encodeParams = URLEncodedUtils.format(paramsList, "utf-8");
+                url += ("?" + encodeParams);
             }
-            // 创建get请求
-            String encodeParams = URLEncodedUtils.format(paramsList, "utf-8");
-            url += encodeParams;
             HttpGet get = new HttpGet(url);
             //创建一个发包客户端
             CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
@@ -42,21 +50,27 @@ public class HttpUtils {
 
     }
 
+
+
     public static void post(String url, Map<String, String> mapParams) {
         try {
             // 创建post请求
             HttpPost post = new HttpPost(url);
-            // 创建list存放数据（为了排除耦合性，用了hashmap进行存储）
-            List<NameValuePair> listParams = new ArrayList<>();
-            Set<String> key = mapParams.keySet();
-            for (String keys : key) {
-                String value = mapParams.get(keys);
-                listParams.add(new BasicNameValuePair(keys, value));
+            // 创建list存放名值对参数（为了排除耦合性，用了hashmap进行存储）
+            List<NameValuePair> listParams = null;
+            // 加一个判断，防止报空指针（有参数设置参数，没有参数就不要赋值，设置为空）
+            if (mapParams != null) {
+                listParams = new ArrayList<>();
+                Set<String> key = mapParams.keySet();
+                for (String keys : key) {
+                    String value = mapParams.get(keys);
+                    listParams.add(new BasicNameValuePair(keys, value));
+                }
+                // 创建原生form表单保存数据
+                UrlEncodedFormEntity encodedFormEntity = new UrlEncodedFormEntity(listParams);
+                // 设置请求体
+                post.setEntity(encodedFormEntity);
             }
-            // 创建原生form表单保存数据
-            UrlEncodedFormEntity encodedFormEntity = new UrlEncodedFormEntity(listParams);
-            // 设置请求体
-            post.setEntity(encodedFormEntity);
             // 创建发包客户端
             CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
             // 执行post请求
