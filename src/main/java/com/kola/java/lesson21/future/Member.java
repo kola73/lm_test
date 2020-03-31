@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson21.future;
+package com.kola.java.lesson21.future;
 
 import main.java.com.kola.java.lesson19.InnerUser;
 import main.java.com.kola.java.lesson19.Login;

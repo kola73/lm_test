@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson26;
+package com.kola.java.lesson26;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson11;
+package com.kola.java.lesson11;
 
 /**
  * do..while和while的区别

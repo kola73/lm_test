@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson10;
+package com.kola.java.lesson10;
 
 /**
  * 二维数组

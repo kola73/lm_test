@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson11;
+package com.kola.java.lesson11;
 
 /**
  * 控制结构

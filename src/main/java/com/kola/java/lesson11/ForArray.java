@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson11;
+package com.kola.java.lesson11;
 
 /**
  * 循环遍历，得到数组的值

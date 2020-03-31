@@ -1,9 +1,9 @@
-package main.java.com.kola.java.lesson21;
+package com.kola.java.lesson21;
 
 
-import main.java.com.kola.java.lesson21.future.Borrower;
-import main.java.com.kola.java.lesson21.future.Investor;
-import main.java.com.kola.java.lesson21.future.Member;
+import com.kola.java.lesson21.future.Borrower;
+import com.kola.java.lesson21.future.Investor;
+import com.kola.java.lesson21.future.Member;
 
 import java.util.ArrayList;
 import java.util.Iterator;

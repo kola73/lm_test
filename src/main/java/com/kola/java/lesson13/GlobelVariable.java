@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson13;
+package com.kola.java.lesson13;
 
 /**
  * 全局变量

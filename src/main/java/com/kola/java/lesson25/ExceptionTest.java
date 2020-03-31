@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson25;
+package com.kola.java.lesson25;
 
 import org.apache.log4j.Logger;
 

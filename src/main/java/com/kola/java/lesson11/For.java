@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson11;
+package com.kola.java.lesson11;
 
 public class For {
     public static void main(String[] args) {

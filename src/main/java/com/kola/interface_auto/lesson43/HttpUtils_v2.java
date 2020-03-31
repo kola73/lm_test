@@ -1,4 +1,4 @@
-package com.kola.interface_auto.lesson42;
+package com.kola.interface_auto.lesson43;
 
 import org.apache.http.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -9,8 +9,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.testng.Assert;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,23 +73,10 @@ public class HttpUtils_v2 {
             CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
             // 执行post请求
             HttpResponse response = closeableHttpClient.execute(post);
-            // 得到响应头
-            Header[] headers = response.getAllHeaders();
-            System.out.println("获得响应头：");
-            for (Header allHeader : headers) {
-                System.out.println(allHeader.getName() + ":" + allHeader.getValue());
-            }
             // 获得响应体
             HttpEntity entity1 = response.getEntity();
             String entities = EntityUtils.toString(entity1);
             System.out.println("获得响应体：" + entities);
-            // 获得响应行
-            System.out.println("获得响应行");
-            StatusLine statusLine = response.getStatusLine();
-            System.out.println(statusLine.getProtocolVersion());
-            System.out.println(statusLine.getReasonPhrase());
-            System.out.println(statusLine.getStatusCode());
-            Assert.assertEquals(statusLine.getStatusCode(), 302);
         } catch (Exception e) {
             e.printStackTrace();
         }

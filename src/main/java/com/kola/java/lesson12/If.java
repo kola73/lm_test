@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson12;
+package com.kola.java.lesson12;
 
 /**
  * IF,

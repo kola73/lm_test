@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson18;
+package com.kola.java.lesson18;
 
 public class Borrower extends Member {
     public void borrow(int money) {

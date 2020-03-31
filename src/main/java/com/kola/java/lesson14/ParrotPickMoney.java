@@ -1,4 +1,4 @@
-package main.java.com.kola.java.lesson14;
+package com.kola.java.lesson14;
 
 public class ParrotPickMoney {
     public static boolean validateMoney(int money) {

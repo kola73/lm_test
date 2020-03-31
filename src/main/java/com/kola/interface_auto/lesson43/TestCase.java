@@ -1,29 +1,23 @@
-package com.kola.interface_auto.lesson42;
+package com.kola.interface_auto.lesson43;
 
-import com.kola.interface_auto.lesson41.HttpUtils_v2;
+import com.alibaba.fastjson.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class TestCase {
     @DataProvider
     public Object[][] datas() {
-        Object[][] datas = {
-                {"admin", "123456a"},
-                {"admin", null}
-        };
+        Object[][] datas = ExcelUtils_v4.readExcel("/api_v4.xlsx", 2);
         return datas;
     }
 
     @Test(dataProvider = "datas")
-    public void testPost(String username, String password) {
+    public void testPost( String apiId, String requestParams, String expectedResponseData) {
         String url = "http://hc-t1.yonghuivip.com/signin";
-        Map<String, String> params = new HashMap<>();
-        params.put("username", username);
-        params.put("password", password);
-        HttpUtils_v2.post(url, params);
+        Map<String, String> params = (Map<String, String>) JSONObject.parse(requestParams);
+        HttpUtils_v2.post(url, (Map<String, String>) params);
     }
 
 }
