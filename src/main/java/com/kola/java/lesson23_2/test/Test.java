@@ -1,6 +1,6 @@
 package com.kola.java.lesson23_2.test;
 
-import main.java.com.kola.java.lesson23_2.AccessModifier;
+import com.kola.java.lesson23_2.AccessModifier;
 
 public class Test {
     public static void main(String[] args) {

@@ -27,8 +27,8 @@ public class TestCase {
         // 准备参数
         Map<String, String> params = (Map<String, String>) JSONObject.parse(requestParams);
         // 发包
-        String result = HttpUtils_v3.request(apiId, url, params);
-        System.out.println(result);
+        String results = HttpUtils_v3.request(apiId, url, params);
+        System.out.println(results);
 
     }
 

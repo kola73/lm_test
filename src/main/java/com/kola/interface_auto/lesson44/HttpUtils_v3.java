@@ -26,6 +26,7 @@ public class HttpUtils_v3 {
     // 存放apiInfo信息的容器
     static Map<String, ApiInfo> apiInfoMap = new HashMap<>();
 
+    // 静态代码块（只执行一次）
     static {
         Object[][] apiInfoMapDatas = ExcelUtils_v4.readExcel("/api_v4.xlsx", 1);
         // 遍历出每一行数据（每一行都是一个数组）
@@ -123,7 +124,7 @@ public class HttpUtils_v3 {
 
     // 发包（分发各种请求）
     public static String request(String apiId, String url, Map<String, String> params) {
-        String method = HttpUtils_v3.getMethodsByApiId(apiId);
+        String method = getMethodsByApiId(apiId);
         String result = "";
         if ("get".equalsIgnoreCase(method)) {
             get(url, params);
