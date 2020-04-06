@@ -1,8 +1,6 @@
 package com.kola.interface_auto.lesson44;
 
 import com.alibaba.fastjson.JSONObject;
-import com.kola.interface_auto.lesson43.ExcelUtils_v4;
-import com.kola.interface_auto.lesson43.HttpUtils_v2;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
