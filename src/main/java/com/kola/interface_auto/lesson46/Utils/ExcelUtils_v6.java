@@ -64,12 +64,12 @@ public class ExcelUtils_v6 {
                     // 获得此列的表头
                     String columnNames = columnName[j];
                     // 设置setter方法名称
-                    String setMethod = "set" + columnNames;
-                    // 得到setter方法
-                    Method method = clazz.getMethod(setMethod, String.class);
-                    // 反射调用该方法
-                    method.invoke(obj, cellValue);
-                }
+                String setMethod = "set" + columnNames;
+                // 得到setter方法
+                Method method = clazz.getMethod(setMethod, String.class);
+                // 反射调用该方法
+                method.invoke(obj, cellValue);
+            }
                 // 把每一行的值放入大的容器
                 objList.add(obj);
             }

@@ -28,12 +28,12 @@ public class TestCase extends BaseTest {
     public Object[][] datas() {
         List<? extends ExcelObject> objLists = ExcelUtils_v7.readExcel("/api_v5.xlsx", 2, ApiDetail.class);
         // 获得list长度
-        int listSize = objLists.size();
-        // 创建一个容器（数据提供者需要的二维数组）--只要获得需要的信息即可
-        // 底下需要的参数是4个，所以列长是4
-        Object[][] data = new Object[listSize][4];
-        for (int i = 0; i < listSize; i++) {
-            ApiDetail apiDetail = (ApiDetail) objLists.get(i);
+            int listSize = objLists.size();
+            // 创建一个容器（数据提供者需要的二维数组）--只要获得需要的信息即可
+            // 底下需要的参数是4个，所以列长是4
+            Object[][] data = new Object[listSize][4];
+            for (int i = 0; i < listSize; i++) {
+                ApiDetail apiDetail = (ApiDetail) objLists.get(i);
             // 测试数据需要啥数据就写啥（见下面）
             data[i][0] = apiDetail.getCaseId();
             data[i][1] = apiDetail.getApiId();

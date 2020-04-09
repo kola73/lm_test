@@ -49,7 +49,7 @@ public class Excel {
     }
 
     public static void main(String[] args) {
-        Object[][] datas = readExcel("/1.xlsx",1);
+        Object[][] datas = readExcel("/下周把这个数据拿来做压测，5000条.xlsx",1);
         for (Object[] cellValue : datas) {
             for (Object cellValues : cellValue) {
                 System.out.print(cellValues);

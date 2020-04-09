@@ -52,6 +52,12 @@ public class ExcelUtils_v7 {
         return cellDataToWrite;
     }
 
+    /**
+     * @param excelPath excel路径
+     * @param sheetNum  sheet号
+     * @param clazz     pojo类的字节码对象
+     * @return
+     */
     public static List<? extends ExcelObject> readExcel(String excelPath, int sheetNum, Class<? extends ExcelObject> clazz) {
         List<ExcelObject> objList = new ArrayList<>();
         try {
@@ -145,7 +151,7 @@ public class ExcelUtils_v7 {
             for (CellData cellData : cellDataList) {
                 // 得到行号
                 int rowNum = ApiUtils.getCaseIdByRowNum(cellData.getCaseId());
-                // 得到对应的行
+                // 得到对应的行（有一行是表头，所以要-1）
                 Row row = sheet.getRow(rowNum - 1);
                 // 得到要写数据的列
                 Cell cellforWrite = row.getCell(cellData.getCellNum() - 1, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
