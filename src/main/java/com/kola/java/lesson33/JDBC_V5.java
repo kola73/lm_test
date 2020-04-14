@@ -5,9 +5,12 @@ import java.sql.*;
 import java.util.*;
 
 public class JDBC_V5 {
-    private static String userName = "futurevistor";
-    private static String pwd = "123456";
-    private static String url = "jdbc:mysql://120.78.128.25:3306/future";
+    //    private static String userName = "futurevistor";
+//    private static String pwd = "123456";
+//    private static String url = "jdbc:mysql://120.78.128.25:3306/future";
+    private static String userName = "yh_t1";
+    private static String pwd = "CcLNJuvB82o2";
+    private static String url = "jdbc:mysql://10.0.0.37:3306/sms_shop_center?useUnicode=true&characterEncoding=utf-8&useSSL=false";
 
     /* 静态代码块：
      通过静态代码块将注册驱动，以及获取连接信息的操作只运行一遍
@@ -154,8 +157,8 @@ public class JDBC_V5 {
     public static void main(String[] args) {
 //        String sql = "update member set leaveamount=?;";
 //        execute(sql, 300);
-        String sql = "select *from member where regname=?;";
-        List<Map<String, String>> datas = select(sql, "cc");
+        String sql = "select *from order_item where status=?;";
+        List<Map<String, String>> datas = select(sql, "1");
         for (Map<String, String> data : datas) {
             System.out.println(data.toString());
         }
