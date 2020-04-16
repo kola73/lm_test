@@ -1,6 +1,5 @@
 package com.kola.interface_auto.lesson48.Utils;
 
-import com.kola.interface_auto.lesson48.pojo.ApiInfo;
 import com.kola.interface_auto.lesson48.pojo.CellData;
 import com.kola.interface_auto.lesson48.pojo.ExcelObject;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -191,9 +190,9 @@ public class ExcelUtils_v7 {
     }
 
     public static void main(String[] args) {
-        List<ExcelObject> lists = (List<ExcelObject>) readExcel("/api_v4.xlsx", 1, ApiInfo.class);
-        for (Object list : lists) {
-            System.out.println(list);
-        }
+//        List<ExcelObject> lists = (List<ExcelObject>) readExcel("/api_v4.xlsx", 1, ApiInfo.class);
+//        for (Object list : lists) {
+//            System.out.println(list);
+//        }
     }
 }

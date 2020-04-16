@@ -1,6 +1,7 @@
 package com.kola.interface_auto.lesson48.Utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.kola.interface_auto.lesson48.pojo.CellData;
 import com.kola.interface_auto.lesson48.pojo.SQLChecker;
 import com.kola.interface_auto.lesson48.pojo.ValidateResult;
 
@@ -101,6 +102,90 @@ String columnName = metaData.getColumnLabel(i);
 
  */
 public class DataValidateUtils {
+    // 前置验证
+    public static void preValidate(String caseId, int cellNum, String preCheckSQL) {
+        // 判空
+        if (StringUtils.isEmpty(preCheckSQL)) {
+            return;
+        }
+        // 解析json
+        List<SQLChecker> sqlCheckerList = JSONObject.parseArray(preCheckSQL, SQLChecker.class);
+        // 创建一个容器，保存验证结果
+        List<ValidateResult> validateResultList = new ArrayList<>();
+        for (SQLChecker sqlChecker : sqlCheckerList) {
+            String no = sqlChecker.getNo();
+            String sql = sqlChecker.getSql();
+            // LinkedHashMap：这个是有序的哈希
+            List<LinkedHashMap<String, String>> expectedResult = sqlChecker.getExpectedResult();
+            // 把json类型转换为字符串
+            String expectedResults = JSONObject.toJSONString(expectedResult);
+            System.out.println(expectedResults);
+            // 拿到sql去访问数据库
+            List<LinkedHashMap<String, String>> actualResult = DBUtils.select(sql);
+            String actualResults = JSONObject.toJSONString(actualResult);
+            System.out.println(actualResults);
+            // 预期结果和实际结果进行比对
+            // 回写结果到excel中去
+            if (actualResults.equals(expectedResults)) {
+                System.out.println("验证通过");
+                // 回写结果到excel对应的测试用例
+                validateResultList.add(new ValidateResult(no, expectedResult, "success"));
+            } else {
+                System.out.println("验证失败");
+                validateResultList.add(new ValidateResult(no, expectedResult, "fail"));
+            }
+            // 拿到要回写的结果
+            String validataResultToWrite = JSONObject.toJSONString(validateResultList);
+            System.out.println("以下是要回写的结果");
+            System.out.println(validataResultToWrite);
+            // 收集到回写数据池之间
+            ExcelUtils_v7.addCellData(new CellData(caseId, cellNum, validataResultToWrite));
+
+        }
+    }
+
+    // 后置验证
+    public static void afterValidate(String caseId, int cellNum, String afterCheckSQL) {
+        // 判空
+        if (StringUtils.isEmpty(afterCheckSQL)) {
+            return;
+        }
+        // 解析json
+        List<SQLChecker> sqlCheckerList = JSONObject.parseArray(afterCheckSQL, SQLChecker.class);
+        // 创建一个容器，保存验证结果
+        List<ValidateResult> validateResultList = new ArrayList<>();
+        for (SQLChecker sqlChecker : sqlCheckerList) {
+            String no = sqlChecker.getNo();
+            String sql = sqlChecker.getSql();
+            // LinkedHashMap：这个是有序的哈希
+            List<LinkedHashMap<String, String>> expectedResult = sqlChecker.getExpectedResult();
+            // 把json类型转换为字符串
+            String expectedResults = JSONObject.toJSONString(expectedResult);
+            System.out.println(expectedResults);
+            // 拿到sql去访问数据库
+            List<LinkedHashMap<String, String>> actualResult = DBUtils.select(sql);
+            String actualResults = JSONObject.toJSONString(actualResult);
+            System.out.println(actualResults);
+            // 预期结果和实际结果进行比对
+            // 回写结果到excel中去
+            if (actualResults.equals(expectedResults)) {
+                System.out.println("验证通过");
+                // 回写结果到excel对应的测试用例
+                validateResultList.add(new ValidateResult(no, expectedResult, "success"));
+            } else {
+                System.out.println("验证失败");
+                validateResultList.add(new ValidateResult(no, expectedResult, "fail"));
+            }
+            // 拿到要回写的结果
+            String validataResultToWrite = JSONObject.toJSONString(validateResultList);
+            System.out.println("以下是要回写的结果");
+            System.out.println(validataResultToWrite);
+            // 收集到回写数据池之间
+            ExcelUtils_v7.addCellData(new CellData(caseId, cellNum, validataResultToWrite));
+        }
+    }
+
+    //example
     public static void main(String[] args) {
         // 解析json
         String sqls = "[{\n" +

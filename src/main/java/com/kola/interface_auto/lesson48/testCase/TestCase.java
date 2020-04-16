@@ -2,6 +2,7 @@ package com.kola.interface_auto.lesson48.testCase;
 
 import com.alibaba.fastjson.JSONObject;
 import com.kola.interface_auto.lesson48.Utils.ApiUtils;
+import com.kola.interface_auto.lesson48.Utils.DataValidateUtils;
 import com.kola.interface_auto.lesson48.Utils.ExcelUtils_v7;
 import com.kola.interface_auto.lesson48.Utils.HttpUtils_v4;
 import com.kola.interface_auto.lesson48.base.BaseTest;
@@ -49,6 +50,8 @@ public class TestCase extends BaseTest {
     @Test(dataProvider = "datas")
     public void testPost(String caseId, String apiId, String requestParams, String expectedResponseData,
                          String preCheckSQL, String afterCheckSQL) {
+        // 前置验证（cellNum写回到excel的第七列，所以输入7，后置的同上）
+        DataValidateUtils.preValidate(caseId, 7, preCheckSQL);
         // 准备url
         String url = ApiUtils.getUrlByApiId(apiId);
         // 准备参数
@@ -58,6 +61,8 @@ public class TestCase extends BaseTest {
 //        System.out.println(results);
 //        ExcelUtils_v7.writeExcel("target/classes/api_v5.xlsx", 2, caseId, 5, results);
         ExcelUtils_v7.addCellData(new CellData(caseId, 5, results));
+        // 后置验证
+        DataValidateUtils.afterValidate(caseId, 9, afterCheckSQL);
     }
 
 
