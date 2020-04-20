@@ -1,7 +1,7 @@
-package com.kola.interface_auto.lesson50.Utils;
+package com.kola.interface_auto.lesson51.Utils;
 
-import com.kola.interface_auto.lesson50.pojo.ApiDetail;
-import com.kola.interface_auto.lesson50.pojo.ApiInfo;
+import com.kola.interface_auto.lesson51.pojo.ApiDetail;
+import com.kola.interface_auto.lesson51.pojo.ApiInfo;
 
 import java.util.HashMap;
 import java.util.List;

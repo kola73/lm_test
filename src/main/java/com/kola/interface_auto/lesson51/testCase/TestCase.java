@@ -1,14 +1,14 @@
-package com.kola.interface_auto.lesson50.testCase;
+package com.kola.interface_auto.lesson51.testCase;
 
 import com.alibaba.fastjson.JSONObject;
-import com.kola.interface_auto.lesson50.Utils.ApiUtils;
-import com.kola.interface_auto.lesson50.Utils.DataValidateUtils;
-import com.kola.interface_auto.lesson50.Utils.ExcelUtils_v8;
-import com.kola.interface_auto.lesson50.Utils.HttpUtils_v4;
-import com.kola.interface_auto.lesson50.base.BaseTest_v2;
-import com.kola.interface_auto.lesson50.pojo.ApiDetail;
-import com.kola.interface_auto.lesson50.pojo.CellData;
-import com.kola.interface_auto.lesson50.pojo.ExcelObject;
+import com.kola.interface_auto.lesson51.Utils.ApiUtils;
+import com.kola.interface_auto.lesson51.Utils.DataValidateUtils;
+import com.kola.interface_auto.lesson51.Utils.ExcelUtils_v8;
+import com.kola.interface_auto.lesson51.Utils.HttpUtils_v4;
+import com.kola.interface_auto.lesson51.base.BaseTest_v2;
+import com.kola.interface_auto.lesson51.pojo.ApiDetail;
+import com.kola.interface_auto.lesson51.pojo.CellData;
+import com.kola.interface_auto.lesson51.pojo.ExcelObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -27,7 +27,7 @@ public class TestCase extends BaseTest_v2 {
     // 封装成一个列表，然后重新解析为二维数组
     @DataProvider
     public Object[][] datas() {
-        List<? extends ExcelObject> objLists = ExcelUtils_v8.readExcel("/api_v6.xlsx", 2, ApiDetail.class);
+        List<? extends ExcelObject> objLists = ExcelUtils_v8.readExcel("/api_v7.xlsx", 2, ApiDetail.class);
         // 获得list长度
         int listSize = objLists.size();
         // 创建一个容器（数据提供者需要的二维数组）--只要获得需要的信息即可

@@ -1,9 +1,9 @@
-package com.kola.interface_auto.lesson50.Utils;
+package com.kola.interface_auto.lesson52.Utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.kola.interface_auto.lesson50.pojo.CellData;
-import com.kola.interface_auto.lesson50.pojo.SQLChecker;
-import com.kola.interface_auto.lesson50.pojo.ValidateResult;
+import com.kola.interface_auto.lesson52.pojo.CellData;
+import com.kola.interface_auto.lesson52.pojo.SQLChecker;
+import com.kola.interface_auto.lesson52.pojo.ValidateResult;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

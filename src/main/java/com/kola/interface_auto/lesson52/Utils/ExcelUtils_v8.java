@@ -1,7 +1,8 @@
-package com.kola.interface_auto.lesson50.Utils;
+package com.kola.interface_auto.lesson52.Utils;
 
-import com.kola.interface_auto.lesson50.pojo.CellData;
-import com.kola.interface_auto.lesson50.pojo.ExcelObject;
+import com.kola.interface_auto.lesson52.pojo.ApiInfo;
+import com.kola.interface_auto.lesson52.pojo.CellData;
+import com.kola.interface_auto.lesson52.pojo.ExcelObject;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*读取excel
+v8
+因为现在excel进行了参数化设置，所以在109行后做了些修改
 v7
 优化了写入数据的性能问题
 新增了行号字段：因为pojo里2个类都应该具有行号，所以我们把行号单独抽取到父类，然后在读取文件的时候，
@@ -37,7 +40,7 @@ v5
 <? super T>:下界通配符(Lower Bounds Wildcards)
 List<? extends C> list1; // list1 的元素的类型只能是 C 和 C 的子类
  */
-public class ExcelUtils_v7 {
+public class ExcelUtils_v8 {
     // 要写的cell数据池
     private static List<CellData> cellDataToWrite = new ArrayList<>();
 
@@ -60,7 +63,7 @@ public class ExcelUtils_v7 {
     public static List<? extends ExcelObject> readExcel(String excelPath, int sheetNum, Class<? extends ExcelObject> clazz) {
         List<ExcelObject> objList = new ArrayList<>();
         try {
-            InputStream is = ExcelUtils_v7.class.getResourceAsStream(excelPath);
+            InputStream is = ExcelUtils_v8.class.getResourceAsStream(excelPath);
             // 创建工作簿对象
             Workbook workbook = WorkbookFactory.create(is);
             // 获得sheet（要-1的原因：因为是sheet是0开始，但是我这边规定传参从1开始传）
@@ -103,8 +106,11 @@ public class ExcelUtils_v7 {
                     String setMethod = "set" + columnNames;
                     // 得到setter方法
                     Method method = clazz.getMethod(setMethod, String.class);
-                    // 反射调用该方法
-                    method.invoke(obj, cellValue);
+                    // 原始字符串的参数的替换（因为拿到原始字符串的值已经被参数化了，所以这边需要做修改）
+                    String commonStr = ParamsUtils.commonStr(cellValue);
+                    // 反射调用该方法（这里要把已经参数化的值替换成普通的值，比如"${username}"被替换成"admin"
+//                    method.invoke(obj, cellValue);
+                    method.invoke(obj, commonStr);
                 }
                 // 把每一行的值放入大的容器
                 objList.add(obj);
@@ -140,13 +146,13 @@ public class ExcelUtils_v7 {
         OutputStream os = null;
         try {
             // 因为要传相对路径的，所以之前那个获取输入流的方法用不了了，换成现在这个
-            is = ExcelUtils_v7.class.getResourceAsStream(sourceExcelPath);
+            is = ExcelUtils_v8.class.getResourceAsStream(sourceExcelPath);
             workbook = WorkbookFactory.create(is);
             Sheet sheet = workbook.getSheetAt(sheetNum - 1);
             //获得最大行数
             int lastRowNum = sheet.getLastRowNum();
             // 拿出所有要回写的数据
-            List<CellData> cellDataList = ExcelUtils_v7.getCellDataToWrite();
+            List<CellData> cellDataList = ExcelUtils_v8.getCellDataToWrite();
             for (CellData cellData : cellDataList) {
                 // 得到行号
                 int rowNum = ApiUtils.getCaseIdByRowNum(cellData.getCaseId());
@@ -190,9 +196,9 @@ public class ExcelUtils_v7 {
     }
 
     public static void main(String[] args) {
-//        List<ExcelObject> lists = (List<ExcelObject>) readExcel("/api_v4.xlsx", 1, ApiInfo.class);
-//        for (Object list : lists) {
-//            System.out.println(list);
-//        }
+        List<ExcelObject> lists = (List<ExcelObject>) readExcel("/api_v7.xlsx", 1, ApiInfo.class);
+        for (Object list : lists) {
+            System.out.println(list);
+        }
     }
 }

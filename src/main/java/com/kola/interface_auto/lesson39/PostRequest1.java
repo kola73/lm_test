@@ -1,5 +1,6 @@
 package com.kola.interface_auto.lesson39;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -20,21 +21,21 @@ import java.util.List;
 4，发包
 5，查看响应结果
  */
-public class PostRequest {
+public class PostRequest1 {
 
     @Test
     public void post() throws Exception {
         // 准备url
-        String url = "http://hc-t1.yonghuivip.com/signin";
+        String url = "http://hc-t1.yonghuivip.com/app/api/sms-config-center/ordertypeconfig" +
+                "/list?pageindex=1&pagesize=50&timestamp=1587374227944&sign=ae6aecfed5cb7f8ed04c841740c0bbd7";
         // 指定请求方法
         HttpPost post = new HttpPost(url);
         // 如果有需要添加请求头，可以使用如下方法添加
         post.addHeader("cookie", "appliedwebsid=4da1beb3-431e-4b39-a536-f9db32158b01");
         post.addHeader("Content-Type","application/json");
-        // 创建一个容器，保存每个参数（针对原生表单）
+        // 创建一个容器，保存每个参数
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("username", "admin"));
-        params.add(new BasicNameValuePair("password", "123456a"));
+        params.add(new BasicNameValuePair("skucode", "3"));
         // 准备原生的form表单
         UrlEncodedFormEntity entity = new UrlEncodedFormEntity(params);
         // 把值存进表单
@@ -59,7 +60,7 @@ public class PostRequest {
         System.out.println(statusLine.getProtocolVersion());
         System.out.println(statusLine.getReasonPhrase());
         System.out.println(statusLine.getStatusCode());
-        Assert.assertEquals(statusLine.getStatusCode(), 302);
+//        Assert.assertEquals(statusLine.getStatusCode(), 302);
     }
 
 }
