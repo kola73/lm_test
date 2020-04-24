@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="test" duration-ms="3989" started-at="2020-04-24T05:44:38Z" finished-at="2020-04-24T05:44:42Z">
+    <groups>
+    </groups>
+    <test name="reportng_config_test" duration-ms="3989" started-at="2020-04-24T05:44:38Z" finished-at="2020-04-24T05:44:42Z">
+      <class name="com.kola.interface_auto.test.lesson53.testCase.TestCase">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.kola.interface_auto.test.lesson53.testCase.TestCase@1a968a59]" name="beforeSuite" is-config="true" duration-ms="5" started-at="2020-04-24T13:44:38Z" finished-at="2020-04-24T13:44:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="testPost(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kola.interface_auto.test.lesson53.testCase.TestCase@1a968a59]" name="testPost" duration-ms="2422" started-at="2020-04-24T13:44:38Z" data-provider="datas" finished-at="2020-04-24T13:44:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{"username":"admin","password":"123456a"}]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[[{
+   "no":"1",
+   "sql":"select count(1)from sys_user where login_name='admin';",
+   "expectedResult":[{"count(1)":"1"}]
+}]]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[[{"expectedResult":[{"count(1)":"1"}],"no":"1","result":"fail"}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPost -->
+        <test-method status="PASS" signature="testPost(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kola.interface_auto.test.lesson53.testCase.TestCase@1a968a59]" name="testPost" duration-ms="861" started-at="2020-04-24T13:44:41Z" data-provider="datas" finished-at="2020-04-24T13:44:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{"username":"admin","password":"efc4fab2ae3f7ef3bf9addee5458e7b21906ed07"}]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[[{
+   "no":"2",
+   "sql":"select count(1)from sys_user where login_name='wenhuijuan';",
+   "expectedResult":[{"count(1)":"1"}]
+}]]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[[{"expectedResult":[{"count(1)":"1"}],"no":"2","result":"fail"}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPost -->
+        <test-method status="PASS" signature="testPost(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kola.interface_auto.test.lesson53.testCase.TestCase@1a968a59]" name="testPost" duration-ms="91" started-at="2020-04-24T13:44:42Z" data-provider="datas" finished-at="2020-04-24T13:44:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{"username":"admin","password":"efc4fab2ae3f7ef3bf9addee5458e7b21906ed07"}]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPost -->
+        <test-method status="PASS" signature="testPost(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.kola.interface_auto.test.lesson53.testCase.TestCase@1a968a59]" name="testPost" duration-ms="103" started-at="2020-04-24T13:44:42Z" data-provider="datas" finished-at="2020-04-24T13:44:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[{"skucode":"3"}]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPost -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.kola.interface_auto.test.lesson53.testCase.TestCase@1a968a59]" name="afterSuite" is-config="true" duration-ms="267" started-at="2020-04-24T13:44:42Z" finished-at="2020-04-24T13:44:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.kola.interface_auto.test.lesson53.testCase.TestCase -->
+    </test> <!-- reportng_config_test -->
+  </suite> <!-- test -->
+</testng-results>

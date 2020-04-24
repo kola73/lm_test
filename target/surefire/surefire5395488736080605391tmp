@@ -1,0 +1,8 @@
+#surefire
+#Fri Apr 24 13:44:37 CST 2020
+org.uncommons.reportng.escape-output=false
+user.dir=C\:\\Users\\YH\\IdeaProjects\\lm_test
+idea.version2019.3.1=true
+maven.repo.local=D\:\\maven\\apache-maven-3.6.1\\m2\\repo
+localRepository=D\:\\maven\\apache-maven-3.6.1\\m2\\repo
+basedir=C\:\\Users\\YH\\IdeaProjects\\lm_test

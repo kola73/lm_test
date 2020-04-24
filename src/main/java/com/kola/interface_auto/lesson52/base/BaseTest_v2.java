@@ -17,6 +17,6 @@ public class BaseTest_v2 {
     // 结束后一次性把所有信息写入目标文件
     @AfterSuite
     public void afterSuite() {
-        ExcelUtils_v8.batchWrite("/api_v7.xlsx", "target/classes/api_v5.xlsx", 2);
+        ExcelUtils_v8.batchWrite("/api_v7.xlsx", "target/classes/api_v7.xlsx", 2);
     }
 }

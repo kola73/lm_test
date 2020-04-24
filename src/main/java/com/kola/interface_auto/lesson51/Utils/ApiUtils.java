@@ -16,12 +16,12 @@ public class ApiUtils {
     // 这边也把类型换成了List<Object>
     static {
         // 拿到apiInfo的所有信息，
-        List<ApiInfo> apiInfoList = (List<ApiInfo>) ExcelUtils_v8.readExcel("/api_v4.xlsx", 1, ApiInfo.class);
+        List<ApiInfo> apiInfoList = (List<ApiInfo>) ExcelUtils_v8.readExcel("/api_v7.xlsx", 1, ApiInfo.class);
         for (ApiInfo apiInfo : apiInfoList) {
             apiInfoMap.put(apiInfo.getApiId(), apiInfo);
         }
         // 拿到apiDetail的所有信息
-        List<ApiDetail> apiDetailList = (List<ApiDetail>) ExcelUtils_v8.readExcel("/api_v4.xlsx", 2, ApiDetail.class);
+        List<ApiDetail> apiDetailList = (List<ApiDetail>) ExcelUtils_v8.readExcel("/api_v7.xlsx", 2, ApiDetail.class);
         for (ApiDetail apiDetail : apiDetailList) {
             apiDetailMap.put(apiDetail.getCaseId(), apiDetail);
         }

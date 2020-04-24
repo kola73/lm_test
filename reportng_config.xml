@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--套件测试-->
+<suite name="test">
+    <test name="reportng_config_test">
+        <classes>
+            <class name="com.kola.interface_auto.test.lesson53.testCase.TestCase"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+    </listeners>
+
+</suite>
