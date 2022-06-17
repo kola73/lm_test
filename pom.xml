@@ -104,7 +104,7 @@
 
         <!--解析json-->
         <dependency>
-            <version>1.2.44</version>
+            <version>1.2.83</version>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
